@@ -56,14 +56,9 @@ diabates = diabates_raw.drop(columns='Outcome', axis=1)
 df = pd.concat([input_df,diabates],axis=0)    
     
 df = df[:1] # Selects only the first row (the user input data)
-df = df.loc[:].values.tolist() # Converting df into lists
-st.write(df)
-
+df1 = df.loc[:].values.tolist() # Converting df into lists
 scaler = load(open('scaler.pkl', 'rb'))
-features = scaler.transform(df)
-st.write(features)
-
-# Encoding of ordinal features
+features = scaler.transform(df1)
 
 
 # Displays the user input features
@@ -79,8 +74,8 @@ else:
 load_clf = joblib.load(open('model.pkl', 'rb'))
 
 # Apply model to make predictions
-prediction = load_clf.predict(df)
-prediction_proba = load_clf.predict_proba(df)
+prediction = load_clf.predict(features)
+prediction_proba = load_clf.predict_proba(features)
 
 st.subheader('Prediction')
 disease = np.array(['Non - Diabatic','Diabatic'])
