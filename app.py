@@ -56,9 +56,10 @@ diabates = diabates_raw.drop(columns='Outcome', axis=1)
 df = pd.concat([input_df,diabates],axis=0)    
     
 df = df[:1] # Selects only the first row (the user input data)
-df1 = df.loc[:].values.tolist() # Converting df into lists
+df1 = df.drop(columns="Outcome")
+list = df.loc[:].values.tolist() # Converting df into lists
 scaler = load(open('scaler.pkl', 'rb'))
-features = scaler.transform(df1)
+features = scaler.transform(list)
 
 
 # Displays the user input features
