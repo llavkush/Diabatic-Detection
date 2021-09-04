@@ -52,11 +52,11 @@ else:
     
 # Combines user input features with entire Diabates dataset
 diabates_raw = pd.read_csv('https://raw.githubusercontent.com/llavkush/Diabatic-Detection/Master/diabetes.csv')
-diabates = diabates_raw.drop(columns='Outcome', axis=1)
+diabates = diabates_raw.drop(columns='Outcome', axis=1, inplace = True)
 df = pd.concat([input_df,diabates],axis=0)    
     
 df = df[:1] # Selects only the first row (the user input data)
-df1 = df.drop(columns="Outcome")
+#df1 = df.drop(columns="Outcome")
 list = df.loc[:].values.tolist() # Converting df into lists
 scaler = load(open('scaler.pkl', 'rb'))
 features = scaler.transform(list)
