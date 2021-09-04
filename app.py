@@ -4,7 +4,9 @@ import numpy as np
 import pickle
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-#from sklearn.externals import joblib  
+from sklearn.externals import joblib
+from sklearn.externals.joblib import dump, load
+
 
 #from sklearn.ensemble import RandomForestClassifier
 
@@ -71,7 +73,7 @@ else:
     st.write(df)
 
 # Reads in saved classification model
-load_clf = pickle.load(open('model.pkl', 'rb'))
+load_clf = joblib.load(open('model.pkl', 'rb'))
 
 # Apply model to make predictions
 prediction = load_clf.predict(df)
