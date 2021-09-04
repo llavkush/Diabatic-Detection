@@ -57,8 +57,11 @@ df = pd.concat([input_df,diabates],axis=0)
     
 df = df[:1] # Selects only the first row (the user input data)
 df = df.loc[:].values.tolist() # Converting df into lists
+st.write(df)
+
 scaler = load(open('scaler.pkl', 'rb'))
 features = scaler.transform(df)
+st.write(features)
 
 # Encoding of ordinal features
 
