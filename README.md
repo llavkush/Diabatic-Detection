@@ -5,7 +5,7 @@ According to one 2021 review, people who live in cities and metropolitan areas i
 
 Rural areas in India are also experiencing a surge in type 2 diabetes cases, but more studies are necessary to fully understand how and why this is happening.
 
-The main objective of this project is to predict if a person is having Diabate, with the help of Machine Learning. Classification algorithms such as Logistic regression, Random Forest, Decision Tree, Naïve Bayes, Support Vector Machine have been trained on the thyroid dataset, UCI Machine Learning repository. Logistics Regression performed well with better accuracy (78%), precision and recall. After hyper parameter tuning, application has deployed on Heroku with the help of Streamlit.
+The main objective of this project is to predict if a person is having Diabate, with the help of Machine Learning. Classification algorithms such as Logistic regression, Random Forest, Decision Tree, Naïve Bayes, Support Vector Machine have been trained on the Pima Indian Diabates dataset, UCI Machine Learning repository. Logistics Regression performed well with better accuracy (78%), precision and recall. After hyper parameter tuning, application has deployed on Heroku with the help of Streamlit.
 
 ## Website link
 https://diabates-detection.herokuapp.com/
