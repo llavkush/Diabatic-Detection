@@ -84,3 +84,6 @@ st.write(disease[prediction])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
+
+
+st.subheader('Published By Lavkush Gupta')
